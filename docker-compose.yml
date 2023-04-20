@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: wordpress.clza4knufuvf.us-east-1.rds.amazonaws.com
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: caroline1998
+      WORDPRESS_DB_NAME: wordpress
+    restart: always
+
