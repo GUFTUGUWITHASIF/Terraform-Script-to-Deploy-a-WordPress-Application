@@ -31,3 +31,7 @@ resource "aws_key_pair" "ec2" {
     command = "echo '${tls_private_key.pk.private_key_pem}' > ./${var.key_name}.pem"
   }
 }
+resource "aws_eip" "lb" {
+  instance = aws_instance.instance.id
+  vpc      = true
+}
